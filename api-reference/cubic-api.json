@@ -138,6 +138,41 @@
         "description": "Initiates a previously created game, setting the turn length and beginning the gameplay."
       }
     },
+    "/api/v1/cubic/getGameDetails": {
+      "post": {
+        "operationId": "CubicController_getGameDetails",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseCommandDTO"
+              },
+              "examples": {
+                "gameDetailsExample": {
+                  "summary": "Example of getting details for a game",
+                  "value": {
+                    "gameID": "uniqueGame123"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Details for a game."
+        },
+        "responses": {
+          "201": {
+            "description": "Game Details."
+          }
+        },
+        "summary": "Game Details",
+        "tags": [
+          "Cubic"
+        ],
+        "description": "Returns details for a game."
+      }
+    },
     "/api/v1/cubic/cubeState": {
       "post": {
         "operationId": "CubicController_getCubeState",
@@ -463,9 +498,7 @@
     "description": "API documentation for the Cubic game, providing endpoints for game management, ship actions, and retrieving game state information.",
     "version": "1.0",
     "contact": {
-      "name": "Cubic Game Support",
-      "url": "http://www.cubicgame.com/support",
-      "email": "support@cubicgame.com"
+      "name": "Cubic Game Support"
     }
   },
   "tags": [
@@ -476,8 +509,12 @@
   ],
   "servers": [
     {
+      "url": "http://50.187.81.221:4000",
+      "description": "Rendezvous Cubic Server."
+    },
+    {
       "url": "https://cubic.ngrok.app",
-      "description": "Main production server for the Cubic API."
+      "description": "Ender's Cubic Server."
     }
   ],
   "components": {
@@ -596,6 +633,19 @@
           "ships"
         ],
         "description": "Data transfer object for defining the entire fleet for a specific team in a game."
+      },
+      "BaseCommandDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string",
+            "description": "The unique identifier of the game to get details for."
+          }
+        },
+        "required": [
+          "gameID"
+        ],
+        "description": "Data transfer object for identifying a game."
       },
       "StartGameDTO": {
         "type": "object",
