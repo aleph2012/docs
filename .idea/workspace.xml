@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787acc56-f9e9-4790-a53b-1cef4d6495d9" name="Changes" comment="remove example pages, add about, restructure, add logos, add styling, new font">
-      <change beforePath="$PROJECT_DIR$/api-reference/cubic-api.json" beforeDir="false" afterPath="$PROJECT_DIR$/api-reference/cubic-api.json" afterDir="false" />
+    <list default="true" id="787acc56-f9e9-4790-a53b-1cef4d6495d9" name="Changes" comment="add examples and descriptions to api">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,23 +46,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "settings.json.schema",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.json.schema&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api-reference" />
@@ -100,7 +101,8 @@
       <workItem from="1743535360668" duration="84000" />
       <workItem from="1750593062940" duration="673000" />
       <workItem from="1750593744473" duration="76000" />
-      <workItem from="1750593826147" duration="2338000" />
+      <workItem from="1750593826147" duration="3059000" />
+      <workItem from="1750597188126" duration="683000" />
     </task>
     <task id="LOCAL-00001" summary="remove example pages, add about, restructure, add logos, add styling, new font">
       <option name="closed" value="true" />
@@ -110,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750596328093</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add examples and descriptions to api">
+      <option name="closed" value="true" />
+      <created>1750596607781</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750596607781</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +128,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove example pages, add about, restructure, add logos, add styling, new font" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove example pages, add about, restructure, add logos, add styling, new font" />
+    <MESSAGE value="add examples and descriptions to api" />
+    <option name="LAST_COMMIT_MESSAGE" value="add examples and descriptions to api" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
