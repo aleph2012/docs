@@ -1,0 +1,628 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/v1/cubic/createGame": {
+      "post": {
+        "operationId": "CubicController_createGame",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGameDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Create Game",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/setupShips": {
+      "post": {
+        "operationId": "CubicController_setupShips",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeamFleetDataDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Setup Ships",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/startGame": {
+      "post": {
+        "operationId": "CubicController_startGame",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartGameDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Start Game",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/cubeState": {
+      "post": {
+        "operationId": "CubicController_getCubeState",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetCubeStateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Get Cube State",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/neighbors": {
+      "post": {
+        "operationId": "CubicController_getNeighbors",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetNeighborsDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Get Neighbors",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/vertex": {
+      "post": {
+        "operationId": "CubicController_getVertex",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetVertexDataDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Get Vertex",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/edge": {
+      "post": {
+        "operationId": "CubicController_getEdge",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetEdgeDataDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Get Edge",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/moveShip": {
+      "post": {
+        "operationId": "CubicController_moveShip",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MoveShipDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Move Ship",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/attack": {
+      "post": {
+        "operationId": "CubicController_attack",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttackDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Attack",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/capture": {
+      "post": {
+        "operationId": "CubicController_capture",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CaptureDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Capture",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    },
+    "/api/v1/cubic/resetGame": {
+      "post": {
+        "operationId": "CubicController_resetGame",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetGameDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Reset Game",
+        "tags": [
+          "Cubic"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "api",
+    "description": "Cubic API Description",
+    "version": "1.0",
+    "contact": {
+
+    }
+  },
+  "tags": [
+    {
+      "name": "api",
+      "description": ""
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://cubic.ngrok.app"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "TeamSetupDataDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "CreateGameDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSetupDataDTO"
+            }
+          }
+        },
+        "required": [
+          "gameID",
+          "teams"
+        ]
+      },
+      "ShipStatsDataDTO": {
+        "type": "object",
+        "properties": {
+          "moveFactor": {
+            "type": "number"
+          },
+          "attackFactor": {
+            "type": "number"
+          },
+          "defenseFactor": {
+            "type": "number"
+          },
+          "attackRange": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "moveFactor",
+          "attackFactor",
+          "defenseFactor",
+          "attackRange"
+        ]
+      },
+      "ShipSetupDataDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "shipType": {
+            "type": "string",
+            "enum": [
+              "SCOUT",
+              "DESTROYER",
+              "CRUISER",
+              "BATTLESHIP"
+            ]
+          },
+          "stats": {
+            "$ref": "#/components/schemas/ShipStatsDataDTO"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "TeamFleetDataDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "teamName": {
+            "type": "string"
+          },
+          "ships": {
+            "description": "List of ships that belong to this team",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShipSetupDataDTO"
+            }
+          }
+        },
+        "required": [
+          "gameID",
+          "teamName",
+          "ships"
+        ]
+      },
+      "StartGameDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "turnLength": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "gameID",
+          "turnLength"
+        ]
+      },
+      "GetCubeStateDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "teamName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "gameID",
+          "teamName"
+        ]
+      },
+      "GetNeighborsDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "gameID"
+        ]
+      },
+      "VertexDTO": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "GetVertexDataDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "teamName": {
+            "type": "string"
+          },
+          "vertex": {
+            "$ref": "#/components/schemas/VertexDTO"
+          }
+        },
+        "required": [
+          "gameID",
+          "teamName",
+          "vertex"
+        ]
+      },
+      "EdgeDTO": {
+        "type": "object",
+        "properties": {
+          "v1": {
+            "$ref": "#/components/schemas/VertexDTO"
+          },
+          "v2": {
+            "$ref": "#/components/schemas/VertexDTO"
+          }
+        },
+        "required": [
+          "v1",
+          "v2"
+        ]
+      },
+      "GetEdgeDataDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "teamName": {
+            "type": "string"
+          },
+          "edge": {
+            "$ref": "#/components/schemas/EdgeDTO"
+          }
+        },
+        "required": [
+          "gameID",
+          "teamName",
+          "edge"
+        ]
+      },
+      "ShipIdentifierDTO": {
+        "type": "object",
+        "properties": {
+          "teamName": {
+            "type": "string"
+          },
+          "shipName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "teamName",
+          "shipName"
+        ]
+      },
+      "MoveShipDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "CURRENT",
+              "UP",
+              "DOWN",
+              "LEFT",
+              "RIGHT",
+              "FORWARD",
+              "BACK"
+            ]
+          },
+          "movingShip": {
+            "$ref": "#/components/schemas/ShipIdentifierDTO"
+          }
+        },
+        "required": [
+          "gameID",
+          "direction",
+          "movingShip"
+        ]
+      },
+      "AttackDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "CURRENT",
+              "UP",
+              "DOWN",
+              "LEFT",
+              "RIGHT",
+              "FORWARD",
+              "BACK"
+            ]
+          },
+          "attackingShip": {
+            "$ref": "#/components/schemas/ShipIdentifierDTO"
+          },
+          "target": {
+            "$ref": "#/components/schemas/ShipIdentifierDTO"
+          }
+        },
+        "required": [
+          "gameID",
+          "direction",
+          "attackingShip",
+          "target"
+        ]
+      },
+      "CaptureDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "CURRENT",
+              "UP",
+              "DOWN",
+              "LEFT",
+              "RIGHT",
+              "FORWARD",
+              "BACK"
+            ]
+          },
+          "capturingShip": {
+            "$ref": "#/components/schemas/ShipIdentifierDTO"
+          }
+        },
+        "required": [
+          "gameID",
+          "direction",
+          "capturingShip"
+        ]
+      },
+      "ResetGameDTO": {
+        "type": "object",
+        "properties": {
+          "gameID": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "gameID"
+        ]
+      }
+    }
+  }
+}
