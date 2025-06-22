@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="787acc56-f9e9-4790-a53b-1cef4d6495d9" name="Changes" comment="update styling">
-      <change beforePath="$PROJECT_DIR$/api-reference/cubic-api.json" beforeDir="false" afterPath="$PROJECT_DIR$/api-reference/cubic-api.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-reference/welcome.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/api-reference/welcome.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/global.css" afterDir="false" />
+    <list default="true" id="787acc56-f9e9-4790-a53b-1cef4d6495d9" name="Changes" comment="fix styling, improve api welcome">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <workItem from="1750593062940" duration="673000" />
       <workItem from="1750593744473" duration="76000" />
       <workItem from="1750593826147" duration="3059000" />
-      <workItem from="1750597188126" duration="1117000" />
+      <workItem from="1750597188126" duration="2886000" />
     </task>
     <task id="LOCAL-00001" summary="remove example pages, add about, restructure, add logos, add styling, new font">
       <option name="closed" value="true" />
@@ -129,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750598398125</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix styling, improve api welcome">
+      <option name="closed" value="true" />
+      <created>1750598996052</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1750598996052</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +145,8 @@
     <MESSAGE value="remove example pages, add about, restructure, add logos, add styling, new font" />
     <MESSAGE value="add examples and descriptions to api" />
     <MESSAGE value="update styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="update styling" />
+    <MESSAGE value="fix styling, improve api welcome" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix styling, improve api welcome" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

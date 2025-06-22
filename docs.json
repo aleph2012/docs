@@ -7,7 +7,19 @@
     "light": "#afc3f6",
     "dark": "#26365e"
   },
+  "appearance": {
+    "default": "system"
+  },
   "favicon": "/favicon.svg",
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+
   "navigation": {
     "dropdowns": [
       {
