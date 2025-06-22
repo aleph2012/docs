@@ -11,19 +11,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateGameDTO"
+              },
+              "examples": {
+                "createGameExample": {
+                  "summary": "Example of creating a game",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "teams": [
+                      {
+                        "name": "RedTeam"
+                      },
+                      {
+                        "name": "BlueTeam"
+                      }
+                    ]
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Game creation details including a unique game ID and participating teams."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Game successfully created."
           }
         },
         "summary": "Create Game",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Initializes a new game instance with a unique identifier and defines the teams that will participate."
       }
     },
     "/api/v1/cubic/setupShips": {
@@ -36,19 +54,52 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TeamFleetDataDTO"
+              },
+              "examples": {
+                "setupShipsExample": {
+                  "summary": "Example of setting up ships for a team",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "teamName": "RedTeam",
+                    "ships": [
+                      {
+                        "name": "RedScout1",
+                        "shipType": "SCOUT",
+                        "stats": {
+                          "moveFactor": 3,
+                          "attackFactor": 1,
+                          "defenseFactor": 1,
+                          "attackRange": 1
+                        }
+                      },
+                      {
+                        "name": "RedDestroyer1",
+                        "shipType": "DESTROYER",
+                        "stats": {
+                          "moveFactor": 2,
+                          "attackFactor": 2,
+                          "defenseFactor": 2,
+                          "attackRange": 1
+                        }
+                      }
+                    ]
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Details for setting up a team's fleet, including the game ID, team name, and a list of ships with their types and stats."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Ships successfully set up for the specified team."
           }
         },
         "summary": "Setup Ships",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Configures the fleet for a specific team within an existing game, assigning names, types, and combat statistics to each ship."
       }
     },
     "/api/v1/cubic/startGame": {
@@ -61,19 +112,30 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/StartGameDTO"
+              },
+              "examples": {
+                "startGameExample": {
+                  "summary": "Example of starting a game",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "turnLength": 60
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Information required to start a game, including the game ID and the duration of each turn in seconds."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Game successfully started."
           }
         },
         "summary": "Start Game",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Initiates a previously created game, setting the turn length and beginning the gameplay."
       }
     },
     "/api/v1/cubic/cubeState": {
@@ -86,19 +148,30 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GetCubeStateDTO"
+              },
+              "examples": {
+                "getCubeStateExample": {
+                  "summary": "Example of getting the cube state",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "teamName": "RedTeam"
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Request to retrieve the current state of the game cube for a specific game and team."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Current cube state retrieved successfully."
           }
         },
         "summary": "Get Cube State",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Retrieves the complete current state of the game board (the cube) for a given game ID and team, providing visibility into the game's ongoing status."
       }
     },
     "/api/v1/cubic/neighbors": {
@@ -111,19 +184,29 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GetNeighborsDTO"
+              },
+              "examples": {
+                "getNeighborsExample": {
+                  "summary": "Example of getting neighbors",
+                  "value": {
+                    "gameID": "uniqueGame123"
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Request to get the neighboring cubes/vertices for a given game."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "List of neighbors retrieved successfully."
           }
         },
         "summary": "Get Neighbors",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Provides information about adjacent positions or nodes on the game cube, useful for movement and tactical planning."
       }
     },
     "/api/v1/cubic/vertex": {
@@ -136,19 +219,35 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GetVertexDataDTO"
+              },
+              "examples": {
+                "getVertexExample": {
+                  "summary": "Example of getting vertex data",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "teamName": "RedTeam",
+                    "vertex": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Request to retrieve data associated with a specific vertex on the game cube for a given game and team."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Vertex data retrieved successfully."
           }
         },
         "summary": "Get Vertex",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Fetches detailed information about a specific vertex (intersection point) on the game cube, including any ships or objects present."
       }
     },
     "/api/v1/cubic/edge": {
@@ -161,19 +260,42 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GetEdgeDataDTO"
+              },
+              "examples": {
+                "getEdgeExample": {
+                  "summary": "Example of getting edge data",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "teamName": "RedTeam",
+                    "edge": {
+                      "v1": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "v2": {
+                        "x": 1,
+                        "y": 0,
+                        "z": 0
+                      }
+                    }
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Request to retrieve data associated with a specific edge on the game cube for a given game and team."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Edge data retrieved successfully."
           }
         },
         "summary": "Get Edge",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Retrieves detailed information about a specific edge (connection between two vertices) on the game cube, useful for understanding pathways and blockades."
       }
     },
     "/api/v1/cubic/moveShip": {
@@ -186,19 +308,34 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/MoveShipDTO"
+              },
+              "examples": {
+                "moveShipExample": {
+                  "summary": "Example of moving a ship",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "direction": "FORWARD",
+                    "movingShip": {
+                      "teamName": "RedTeam",
+                      "shipName": "RedScout1"
+                    }
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Details for moving a ship, specifying the game ID, the direction of movement, and the ship to be moved."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Ship successfully moved."
           }
         },
         "summary": "Move Ship",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Allows a player to move one of their ships across the game board in a specified direction, consuming move points."
       }
     },
     "/api/v1/cubic/attack": {
@@ -211,19 +348,38 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AttackDTO"
+              },
+              "examples": {
+                "attackExample": {
+                  "summary": "Example of a ship attacking",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "direction": "CURRENT",
+                    "attackingShip": {
+                      "teamName": "RedTeam",
+                      "shipName": "RedDestroyer1"
+                    },
+                    "target": {
+                      "teamName": "BlueTeam",
+                      "shipName": "BlueScout1"
+                    }
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Details for a ship to perform an attack, including the game ID, the direction of attack, the attacking ship, and the target ship."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Attack successfully executed."
           }
         },
         "summary": "Attack",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Enables a ship to engage an enemy ship within its attack range, potentially dealing damage based on combat factors."
       }
     },
     "/api/v1/cubic/capture": {
@@ -236,19 +392,34 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CaptureDTO"
+              },
+              "examples": {
+                "captureExample": {
+                  "summary": "Example of a ship capturing an objective",
+                  "value": {
+                    "gameID": "uniqueGame123",
+                    "direction": "CURRENT",
+                    "capturingShip": {
+                      "teamName": "RedTeam",
+                      "shipName": "RedCruiser1"
+                    }
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Details for a ship to attempt a capture action, including the game ID, the direction, and the capturing ship."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Capture attempt successfully executed."
           }
         },
         "summary": "Capture",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Allows a ship to attempt to capture an objective or another game element at its current location or in an adjacent direction."
       }
     },
     "/api/v1/cubic/resetGame": {
@@ -261,39 +432,52 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResetGameDTO"
+              },
+              "examples": {
+                "resetGameExample": {
+                  "summary": "Example of resetting a game",
+                  "value": {
+                    "gameID": "uniqueGame123"
+                  }
+                }
               }
             }
-          }
+          },
+          "description": "Information required to reset a game, primarily the game ID."
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Game successfully reset."
           }
         },
         "summary": "Reset Game",
         "tags": [
           "Cubic"
-        ]
+        ],
+        "description": "Resets the state of a specified game, returning it to its initial configuration (e.g., clearing ship placements, scores, and turn data)."
       }
     }
   },
   "info": {
-    "title": "api",
-    "description": "Cubic API Description",
+    "title": "Cubic Game API",
+    "description": "API documentation for the Cubic game, providing endpoints for game management, ship actions, and retrieving game state information.",
     "version": "1.0",
     "contact": {
-
+      "name": "Cubic Game Support",
+      "url": "http://www.cubicgame.com/support",
+      "email": "support@cubicgame.com"
     }
   },
   "tags": [
     {
-      "name": "api",
-      "description": ""
+      "name": "Cubic",
+      "description": "Operations related to the Cubic game mechanics."
     }
   ],
   "servers": [
     {
-      "url": "https://cubic.ngrok.app"
+      "url": "https://cubic.ngrok.app",
+      "description": "Main production server for the Cubic API."
     }
   ],
   "components": {
@@ -302,45 +486,54 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the team."
           }
         },
         "required": [
           "name"
-        ]
+        ],
+        "description": "Data transfer object for setting up a new team in the game."
       },
       "CreateGameDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique identifier for the game instance."
           },
           "teams": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TeamSetupDataDTO"
-            }
+            },
+            "description": "An array of teams participating in the game."
           }
         },
         "required": [
           "gameID",
           "teams"
-        ]
+        ],
+        "description": "Data transfer object for creating a new game."
       },
       "ShipStatsDataDTO": {
         "type": "object",
         "properties": {
           "moveFactor": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of spaces a ship can move per turn."
           },
           "attackFactor": {
-            "type": "number"
+            "type": "number",
+            "description": "The offensive power of the ship, affecting damage dealt."
           },
           "defenseFactor": {
-            "type": "number"
+            "type": "number",
+            "description": "The defensive capability of the ship, affecting damage taken."
           },
           "attackRange": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum distance from which the ship can attack."
           }
         },
         "required": [
@@ -348,13 +541,15 @@
           "attackFactor",
           "defenseFactor",
           "attackRange"
-        ]
+        ],
+        "description": "Data transfer object defining the combat and movement statistics of a ship."
       },
       "ShipSetupDataDTO": {
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name of the ship."
           },
           "shipType": {
             "type": "string",
@@ -363,27 +558,32 @@
               "DESTROYER",
               "CRUISER",
               "BATTLESHIP"
-            ]
+            ],
+            "description": "The type of ship, determining its base characteristics."
           },
           "stats": {
-            "$ref": "#/components/schemas/ShipStatsDataDTO"
+            "$ref": "#/components/schemas/ShipStatsDataDTO",
+            "description": "Detailed statistics for the ship's performance."
           }
         },
         "required": [
           "name"
-        ]
+        ],
+        "description": "Data transfer object for setting up an individual ship within a team's fleet."
       },
       "TeamFleetDataDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           },
           "teamName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the team to which the fleet belongs."
           },
           "ships": {
-            "description": "List of ships that belong to this team",
+            "description": "List of ships that belong to this team, including their names, types, and stats.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ShipSetupDataDTO"
@@ -394,141 +594,169 @@
           "gameID",
           "teamName",
           "ships"
-        ]
+        ],
+        "description": "Data transfer object for defining the entire fleet for a specific team in a game."
       },
       "StartGameDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game to start."
           },
           "turnLength": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration of each turn in seconds."
           }
         },
         "required": [
           "gameID",
           "turnLength"
-        ]
+        ],
+        "description": "Data transfer object for initiating a game."
       },
       "GetCubeStateDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           },
           "teamName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the team requesting the cube state."
           }
         },
         "required": [
           "gameID",
           "teamName"
-        ]
+        ],
+        "description": "Data transfer object for requesting the current state of the game cube."
       },
       "GetNeighborsDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           }
         },
         "required": [
           "gameID"
-        ]
+        ],
+        "description": "Data transfer object for requesting information about neighboring positions on the game cube."
       },
       "VertexDTO": {
         "type": "object",
         "properties": {
           "x": {
-            "type": "number"
+            "type": "number",
+            "description": "The x-coordinate of the vertex."
           },
           "y": {
-            "type": "number"
+            "type": "number",
+            "description": "The y-coordinate of the vertex."
           },
           "z": {
-            "type": "number"
+            "type": "number",
+            "description": "The z-coordinate of the vertex."
           }
         },
         "required": [
           "x",
           "y",
           "z"
-        ]
+        ],
+        "description": "Data transfer object representing a 3D coordinate (vertex) on the game cube."
       },
       "GetVertexDataDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           },
           "teamName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the team requesting the vertex data."
           },
           "vertex": {
-            "$ref": "#/components/schemas/VertexDTO"
+            "$ref": "#/components/schemas/VertexDTO",
+            "description": "The specific vertex for which to retrieve data."
           }
         },
         "required": [
           "gameID",
           "teamName",
           "vertex"
-        ]
+        ],
+        "description": "Data transfer object for requesting data associated with a specific vertex."
       },
       "EdgeDTO": {
         "type": "object",
         "properties": {
           "v1": {
-            "$ref": "#/components/schemas/VertexDTO"
+            "$ref": "#/components/schemas/VertexDTO",
+            "description": "The first vertex defining the edge."
           },
           "v2": {
-            "$ref": "#/components/schemas/VertexDTO"
+            "$ref": "#/components/schemas/VertexDTO",
+            "description": "The second vertex defining the edge."
           }
         },
         "required": [
           "v1",
           "v2"
-        ]
+        ],
+        "description": "Data transfer object representing an edge connecting two vertices on the game cube."
       },
       "GetEdgeDataDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           },
           "teamName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the team requesting the edge data."
           },
           "edge": {
-            "$ref": "#/components/schemas/EdgeDTO"
+            "$ref": "#/components/schemas/EdgeDTO",
+            "description": "The specific edge for which to retrieve data."
           }
         },
         "required": [
           "gameID",
           "teamName",
           "edge"
-        ]
+        ],
+        "description": "Data transfer object for requesting data associated with a specific edge."
       },
       "ShipIdentifierDTO": {
         "type": "object",
         "properties": {
           "teamName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the team to which the ship belongs."
           },
           "shipName": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name of the ship."
           }
         },
         "required": [
           "teamName",
           "shipName"
-        ]
+        ],
+        "description": "Data transfer object for uniquely identifying a ship by its team and name."
       },
       "MoveShipDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           },
           "direction": {
             "type": "string",
@@ -540,23 +768,27 @@
               "RIGHT",
               "FORWARD",
               "BACK"
-            ]
+            ],
+            "description": "The direction in which the ship should move relative to its current position."
           },
           "movingShip": {
-            "$ref": "#/components/schemas/ShipIdentifierDTO"
+            "$ref": "#/components/schemas/ShipIdentifierDTO",
+            "description": "The ship that is performing the move action."
           }
         },
         "required": [
           "gameID",
           "direction",
           "movingShip"
-        ]
+        ],
+        "description": "Data transfer object for instructing a ship to move."
       },
       "AttackDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           },
           "direction": {
             "type": "string",
@@ -568,13 +800,16 @@
               "RIGHT",
               "FORWARD",
               "BACK"
-            ]
+            ],
+            "description": "The direction of the attack relative to the attacking ship. 'CURRENT' means attacking at the same vertex."
           },
           "attackingShip": {
-            "$ref": "#/components/schemas/ShipIdentifierDTO"
+            "$ref": "#/components/schemas/ShipIdentifierDTO",
+            "description": "The ship initiating the attack."
           },
           "target": {
-            "$ref": "#/components/schemas/ShipIdentifierDTO"
+            "$ref": "#/components/schemas/ShipIdentifierDTO",
+            "description": "The ship being targeted by the attack."
           }
         },
         "required": [
@@ -582,13 +817,15 @@
           "direction",
           "attackingShip",
           "target"
-        ]
+        ],
+        "description": "Data transfer object for a ship to perform an attack action against another ship."
       },
       "CaptureDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game."
           },
           "direction": {
             "type": "string",
@@ -600,28 +837,33 @@
               "RIGHT",
               "FORWARD",
               "BACK"
-            ]
+            ],
+            "description": "The direction of the capture attempt relative to the capturing ship. 'CURRENT' means attempting capture at the same vertex."
           },
           "capturingShip": {
-            "$ref": "#/components/schemas/ShipIdentifierDTO"
+            "$ref": "#/components/schemas/ShipIdentifierDTO",
+            "description": "The ship attempting to capture an objective."
           }
         },
         "required": [
           "gameID",
           "direction",
           "capturingShip"
-        ]
+        ],
+        "description": "Data transfer object for a ship to attempt a capture action."
       },
       "ResetGameDTO": {
         "type": "object",
         "properties": {
           "gameID": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier of the game to be reset."
           }
         },
         "required": [
           "gameID"
-        ]
+        ],
+        "description": "Data transfer object for resetting a game to its initial state."
       }
     }
   }
