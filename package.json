@@ -1,0 +1,25 @@
+{
+  "name": "cubic-docs",
+  "version": "0.0.2",
+  "description": "Official documentation for the Cubic game.",
+  "keywords": [
+    "docs",
+    "api",
+    "game"
+  ],
+  "homepage": "https://github.com/aleph2012/docs#readme",
+  "bugs": {
+    "url": "https://github.com/aleph2012/docs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleph2012/docs.git"
+  },
+  "license": "Apache-2.0",
+  "author": "aleph2012",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "mint dev"
+  }
+}
