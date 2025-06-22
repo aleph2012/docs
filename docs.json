@@ -15,10 +15,6 @@
         "openapi": "openapi.json"
       },
       {
-        "tab": "Relayoor",
-        "openapi": "relayer-api.json"
-      },
-      {
         "tab": "Guides",
         "groups": [
           {
